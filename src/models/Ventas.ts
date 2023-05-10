@@ -1,5 +1,7 @@
 import { Model, DataTypes } from "sequelize";
 import { database } from "../database/db";
+// imprtamos el modelo de cliente
+import { Cliente } from "./Cliente";
 
 export class Venta extends Model {
   public fechaVenta!: string;
@@ -46,3 +48,5 @@ Venta.init(
     timestamps: true,
   }
 );
+// Asociación la tabla cliente con la tabla venta
+Venta.belongsTo(Cliente, { foreignKey: "clienteId" }); // Agrega una columna clienteId en la tabla ventas

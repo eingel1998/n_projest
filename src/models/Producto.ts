@@ -1,5 +1,6 @@
 import { Model, DataTypes } from "sequelize";
 import { database } from "../database/db";
+import { TipoProducto } from "./TipoProducto";
 
 export class Producto extends Model {
   public nombreProducto!: string;
@@ -46,3 +47,5 @@ Producto.init(
     timestamps: true,
   }
 );
+// Asociación entre Producto y TipoProducto
+Producto.belongsTo(TipoProducto, { foreignKey: "tipoProductoId" }); // Agrega una columna tipoProductoId en la tabla productos
