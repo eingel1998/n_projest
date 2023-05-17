@@ -39,3 +39,8 @@ ProductoVenta.init(
 // Asociación entre ProductoVenta y Venta
 ProductoVenta.belongsTo(Venta, { foreignKey: "ventaId" }); // Agrega una columna ventaId en la tabla productoVentas
 ProductoVenta.belongsTo(Producto, { foreignKey: "productoId" }); // Agrega una columna productoId en la tabla productoVentas
+
+// agregamos la relacion inversa de uno a muchos
+Venta.hasMany(ProductoVenta, { foreignKey: "ventaId" }); // Agrega una columna ventaId en la tabla productoVentas
+// agregamos la relacion inversa de uno a muchos
+Producto.hasMany(ProductoVenta, { foreignKey: "productoId" }); // Agrega una columna productoId en la tabla productoVentas

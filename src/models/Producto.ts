@@ -49,3 +49,6 @@ Producto.init(
 );
 // Asociación entre Producto y TipoProducto
 Producto.belongsTo(TipoProducto, { foreignKey: "tipoProductoId" }); // Agrega una columna tipoProductoId en la tabla productos
+
+// agregamos la relacion inversa de uno a muchos
+TipoProducto.hasMany(Producto, { foreignKey: "tipoProductoId" }); // Agrega una columna tipoProductoId en la tabla productos
